@@ -3,7 +3,7 @@ import unittest
 import matplotlib.pyplot as plt
 from kf import KF
 
-# plt.ion()
+plt.ion()
 plt.figure(figsize=(8,5))
 kf = KF(initial_x=0.0,initial_v=1.0,accel_variance=0.1)
 
@@ -36,6 +36,16 @@ for step in range(Num_steps):
 
     real_xs.append(real_x)
     real_vs.append(real_v)
+
+musx_array = [mu[0] for mu in mus]
+musx_array = np.array(musx_array)
+print("MSE Error for Position: ",'{0:.3f}'.format(((musx_array - real_xs) ** 2).mean(axis=None)*100))
+print("RMSE Error for Position: ",'{0:.3f}\n'.format(np.sqrt(((musx_array - real_xs) ** 2).mean(axis=None))*100))
+
+musv_array = [mu[1] for mu in mus]
+musv_array = np.array(musv_array)
+print("MSE Error for Velocity: ",'{0:.3f}'.format(((musv_array - real_vs) ** 2).mean(axis=None)*100))
+print("RMSE Error for Velocity: ",'{0:.3f}'.format(np.sqrt(((musv_array - real_vs) ** 2).mean(axis=None))*100))
 
 plt.subplot(2,1,1)
 plt.title('Position')
