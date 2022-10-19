@@ -5,7 +5,7 @@ from kf import KF
 
 plt.ion()
 plt.figure(figsize=(8,5))
-kf = KF(initial_x=0.0,initial_v=1.0,accel_variance=0.1)
+kf = KF(initial_x=0.0,initial_v=1.0,accel_variance=10.0)
 DT = 0.1
 Num_steps = 1000
 mus = []

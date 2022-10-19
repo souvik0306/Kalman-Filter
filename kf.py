@@ -16,7 +16,18 @@ class KF:
         self._P = new_P
         self._x = new_x
 
-    
+    def update(self,meas_value:float,meas_variance:float):
+        z = np.array([meas_value])
+        R = np.array([meas_variance])
+        H = np.array([1,0]).reshape((1,2))
+        y = z-H.dot(self._x)
+        s = H.dot(self._P).dot(H.T)+R
+        K = self._P.dot(H.T).dot(np.linalg.inv(s))
+        new_x = self._x + K.dot(y)
+        new_P = (np.eye(2)-K.dot(H)).dot(self._P)
+        self._P = new_P
+        self._x = new_x
+
     @property
     def cov(self) -> np.array:  
         return self._P

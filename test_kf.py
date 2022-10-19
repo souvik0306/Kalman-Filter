@@ -42,3 +42,10 @@ class TestKF(unittest.TestCase):
             det_after = np.linalg.det(kf.cov)
 
             self.assertGreater(det_after,det_before)
+
+    def test_can_update(self):
+        x = 0.2
+        v = 2.3
+
+        kf = KF(initial_x=x,initial_v=v,accel_variance=1.2)
+        kf.update(meas_value=0.1,meas_variance=0.1)
