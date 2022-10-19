@@ -5,16 +5,28 @@ from kf import KF
 
 plt.ion()
 plt.figure(figsize=(8,5))
-kf = KF(initial_x=0.0,initial_v=1.0,accel_variance=10.0)
+kf = KF(initial_x=0.0,initial_v=1.0,accel_variance=0.1)
 DT = 0.1
+
 Num_steps = 1000
+meas_every_step = 20
+
+real_x = 0.0
+real_v = 0.9
+meas_variance = 0.1**2
+
 mus = []
 covs = []
 
-for i in range(Num_steps):
+for step in range(Num_steps):
     covs.append(kf.cov)
     mus.append(kf.mean)
+    real_x = real_x+DT*real_v
     kf.predict(dt=DT)
+
+    if step != 0 and step % meas_every_step ==0:
+        kf.update(meas_value=real_x+np.random.randn()*np.sqrt(meas_variance),
+        meas_variance=meas_variance)
 
 plt.subplot(2,1,1)
 plt.title('Position')
