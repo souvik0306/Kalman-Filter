@@ -12,11 +12,13 @@ Kalman Filtering can be understood as a way of making sense of a noisy world.
 
 Simulation Results - 
  
- Ego Robot State      | Ego State with Noise |
+ Ego Robot's Initial State      | Ego State with Noise |
 | :-----------: | :-----------: |
 |   <image src="https://github.com/souvik0306/Kalman-Filter/blob/main/Media/Figure_2.png" width="450" height="350"> | <image src="https://github.com/souvik0306/Kalman-Filter/blob/main/Media/Figure_3_noise.png" width="450" height="350"> |
  
-
+ Ego Robot State      | Ego State with Disturbance |
+| :-----------: | :-----------: |
+|   <image src="https://github.com/souvik0306/Kalman-Filter/blob/main/Media/Figure_5_analysis.png" width="450" height="350"> | <image src="https://github.com/souvik0306/Kalman-Filter/blob/main/Media/Figure_6_analysis.png" width="450" height="350"> |
 
 ## Results - 
 • Developed Kalman Filter-based state estimation model for precise approximation & visualization of a robot’s state. 
