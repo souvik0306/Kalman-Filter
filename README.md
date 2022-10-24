@@ -10,7 +10,7 @@ Kalman Filtering can be understood as a way of making sense of a noisy world.
 
 2. Once the outcome of the next measurement (necessarily corrupted with some amount of error, including random noise) is observed, these estimates are updated using a weighted average, with more weight being given to estimates with higher certainty.
 
-Simulation Results - 
+## Simulation Results - 
  
  Ego Robot's Initial State      | Ego State with Noise |
 | :-----------: | :-----------: |
