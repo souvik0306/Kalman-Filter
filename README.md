@@ -10,6 +10,10 @@ Kalman Filtering can be understood as a way of making sense of a noisy world.
 
 2. Once the outcome of the next measurement (necessarily corrupted with some amount of error, including random noise) is observed, these estimates are updated using a weighted average, with more weight being given to estimates with higher certainty.
 
+Simulation Results - 
+ 
+ <image src="https://github.com/souvik0306/Kalman-Filter/blob/main/Media/Figure_2.png" width="450" height="350">
+
 ## Results - 
 • Developed Kalman Filter-based state estimation model for precise approximation & visualization of a robot’s state. 
 
